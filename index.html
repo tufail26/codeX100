@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="codeX100 — A minimalist 100-day coding challenge tracker. Track your daily coding progress with a clean calendar view." />
+  <title>codeX100 — 100 Days of Code Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header id="site-header">
+    <div class="header-inner">
+      <h1 id="logo">
+        <span class="logo-code">code</span><span class="logo-x">X</span><span class="logo-100">100</span>
+      </h1>
+      <p class="tagline">100 days. Pure code. No excuses.</p>
+    </div>
+    <div class="stats-bar" id="stats-bar">
+      <div class="stat">
+        <span class="stat-value" id="stat-completed">0</span>
+        <span class="stat-label">completed</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-value" id="stat-streak">0</span>
+        <span class="stat-label">streak</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-value" id="stat-remaining">100</span>
+        <span class="stat-label">remaining</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Progress Bar -->
+  <div class="progress-container" id="progress-container">
+    <div class="progress-track">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+    <span class="progress-text" id="progress-text">0%</span>
+  </div>
+
+  <!-- Grid -->
+  <main id="main-grid">
+    <div class="grid" id="days-grid"></div>
+  </main>
+
+  <!-- Day Detail Modal -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal" id="modal">
+      <button class="modal-close" id="modal-close" aria-label="Close modal">&times;</button>
+      <div class="modal-header">
+        <span class="modal-day-number" id="modal-day-number">Day 01</span>
+        <span class="modal-date" id="modal-date">Aug 03, 2026</span>
+      </div>
+      <div class="modal-body">
+        <label for="modal-note" class="modal-label">What did you code today?</label>
+        <textarea id="modal-note" class="modal-textarea" placeholder="Write a brief note about today's progress..." rows="3"></textarea>
+
+        <!-- Task Checklist -->
+        <div class="checklist-section">
+          <label class="modal-label">Tasks</label>
+          <ul class="checklist" id="modal-checklist"></ul>
+          <div class="checklist-add">
+            <input type="text" id="checklist-input" class="checklist-input" placeholder="Add a task..." />
+            <button class="checklist-add-btn" id="checklist-add-btn" aria-label="Add task">+</button>
+          </div>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-toggle" id="modal-toggle">Mark Complete</button>
+        <button class="btn btn-save" id="modal-save">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reset -->
+  <footer id="site-footer">
+    <button class="reset-btn" id="reset-btn">Reset All Progress</button>
+    <p class="footer-note">Data saved locally in your browser.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
